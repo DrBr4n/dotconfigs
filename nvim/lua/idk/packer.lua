@@ -14,11 +14,7 @@ return require('packer').startup(function(use)
             require("telescope").load_extension("live_grep_args")
         end 
     }
-
-    use({'rose-pine/neovim', as = 'rose-pine', config = function()
-        require("rose-pine").setup()
-        vim.cmd('colorscheme rose-pine') end})
-
+  
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
     use('theprimeagen/harpoon')
@@ -49,5 +45,18 @@ return require('packer').startup(function(use)
     use('ThePrimeagen/vim-be-good')
 
     use('mbbill/undotree')
+    
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+
+    -- Colorschemes
+    use { 'rose-pine/neovim' }
+    
+    use { 'catppuccin/nvim' } 
    
+    use { 'ellisonleao/gruvbox.nvim' }
+    
+    use { 'navarasu/onedark.nvim' }
 end)

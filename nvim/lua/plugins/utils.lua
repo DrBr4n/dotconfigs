@@ -2,8 +2,10 @@ return {
 	-- "gc" to comment visual regions/lines
 	{ "numToStr/Comment.nvim", opts = {} },
 
-	-- Highlight todo, notes, etc in comments
-	{
+	-- Detect tabstop and shiftwidth automatically
+	{ "tpope/vim-sleuth" },
+
+	{ -- Highlight todo, notes, etc in comments
 		"folke/todo-comments.nvim",
 		event = "VimEnter",
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -58,6 +60,20 @@ return {
 				["<leader>s"] = { name = "[S]earch", _ = "which_key_ignore" },
 				["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
 			})
+		end,
+	},
+
+	{ -- Better gitdiff
+		"sindrets/diffview.nvim",
+		opts = {},
+	},
+
+	{ -- Preview Markdown
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function()
+			vim.fn["mkdp#util#install"]()
 		end,
 	},
 }

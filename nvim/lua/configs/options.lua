@@ -15,20 +15,19 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.breakindent = true
 vim.opt.wrap = false
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+-- vim.opt.tabstop = 4
+-- vim.opt.softtabstop = 4
+-- vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 -- vim.opt.smartindent = true
 
--- Case-insensitive seraching unless \C or capital in search
+-- Case-insensitive searching unless \C or capital in search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.undofile = true
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.swapfile = false
-vim.opt.backup = false
+vim.opt.swapfile = true
+vim.opt.backup = true
 
 vim.opt.signcolumn = "yes"
 
